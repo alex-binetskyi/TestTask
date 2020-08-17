@@ -1,0 +1,275 @@
+.dirrections {
+  position: relative;
+  padding-top: 45px;
+  padding-bottom: 80px;
+
+  @include media-mobile {
+    padding: 40px 0;
+  }
+}
+
+.dirrections__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.dirrections__lead {
+  margin: 0 0 10px;
+  order: 1;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #c4c4c4;
+
+  @include media-mobile {
+    margin: 0 20px 20px;
+  }
+}
+
+.dirrections__title {
+  margin: 0 0 10px;
+  order: 2;
+  font-size: 30px;
+  line-height: 36px;
+  text-align: center;
+  color: #000000;
+}
+
+.dirrections__image {
+  order: 2;
+  width: 140px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+
+  &::before,
+  &::after {
+    content: "";
+    width: 50px;
+    height: 1px;
+    background-color: $blue;
+  }
+}
+
+.dirrections__tabs-list {
+  @include list-reset;
+  display: flex;
+  justify-content: center;
+
+  @include media-tablet {
+    margin: 0 50px;
+  }
+}
+
+.dirrections__tabs-item {
+  position: relative;
+  width: 300px;
+  height: 144px;
+  border-right: 1px solid $blue;
+
+  &:nth-last-child(1) {
+    border-right: none;
+  }
+
+  &--neurology {
+    background-repeat: no-repeat;
+    background-position: 100px 5px;
+    background-size: 59px 65px;
+    background-image: url("../img/brain.svg");
+
+    h3 {
+      margin: 0 118px 16px auto;
+    }
+  }
+
+  &--massage {
+    background-repeat: no-repeat;
+    background-position: 50% 1px;
+    background-size: 91px 73px;
+    background-image: url("../img/healthcare.svg");
+
+    h3 {
+      margin: 0 auto 16px;
+    }
+  }
+
+  &--rheumatology {
+    background-repeat: no-repeat;
+    background-position: 146px 2px;
+    background-size: 70px 70px;
+    background-image: url("../img/joint.svg");
+
+    h3 {
+      margin: 0 auto 16px 118px;
+    }
+  }
+
+  label {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    cursor: pointer;
+
+    &:hover {
+      h3 {
+        color: $blue;
+      }
+    }
+  }
+
+  h3 {
+    align-self: flex-end;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: #000000;
+    transition: all 0.3s ease-in-out;
+  }
+
+  @include media-tablet {
+    width: 256px;
+    background-position: 50% 5px;
+
+    h3 {
+      margin: 0 auto;
+    }
+  }
+
+  @include media-mobile {
+    width: 75vw;
+    height: 216px;
+    margin: 0 25vw;
+    border: 2px solid $blue;
+    border-radius: 32px;
+    background-size: 50% auto;
+    background-position: 50% 25%;
+    overflow: hidden;
+
+    h3 {
+      display: none;
+    }
+  }
+}
+
+.dirrections__show-button {
+  display: none;
+
+  @include media-mobile {
+    position: absolute;
+    z-index: 15;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    text-align: center;
+
+
+    span:nth-child(1) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 9px 30px 11px 15px;
+      font-weight: bold;
+      color: #ffffff;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 17px;
+      background-color: $blue;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 29%;
+        right: 45px;
+        display: block;
+        box-sizing: border-box;
+        width: 10px;
+        height: 10px;
+        border: solid #ffffff;
+        border-width: 0 3px 3px 0;
+        transform: rotate(45deg);
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+}
+
+.dirrections__tabs-wrapper {
+  @include media-mobile {
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+.dirrections__tabs-wrapper .slick-track {
+  @include media-mobile {
+    display: flex;
+  }
+}
+
+.dirrections__buttons-wrapper {
+  display: none;
+
+  @include media-mobile {
+    position: absolute;
+    top: 50%;
+    left: 5.5vw;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: calc(92vw);
+  }
+}
+
+.dirrections__buttons-wrapper .slick-arrow {
+  @include media-mobile {
+    display: flex;
+    flex-direction: column;
+    width: 27px;
+    height: 27px;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    background-color: transparent;
+    border: 1px solid transparent;
+    box-shadow: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &::before {
+      content: "";
+      display: block;
+      box-sizing: border-box;
+      width: 18px;
+      height: 18px;
+      border: solid $blue;
+      transform: rotate(45deg);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
+
+.dirrections__buttons-wrapper .slick-prev::before {
+  @include media-mobile {
+    border-width: 0 0 3px 3px;
+  }
+}
+
+.dirrections__buttons-wrapper .slick-next::before {
+  @include media-mobile {
+    border-width: 3px 3px 0 0;
+  }
+}

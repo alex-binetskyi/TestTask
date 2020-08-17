@@ -1,0 +1,201 @@
+.tabs-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 140px 55px 120px;
+  background: #f6f6f6;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+
+  @include media-tablet {
+    flex-direction: column;
+    padding: 50px;
+  }
+
+  @include media-mobile {
+    padding: 30px 0;
+    &--opened {
+      display: flex;
+    }
+  }
+}
+
+.tabs-section__content {
+  width: 420px;
+  margin-top: 85px;
+
+  @include media-tablet {
+    order: 2;
+    width: 690px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 40px auto 0;
+  }
+
+  @include media-mobile {
+    width: auto;
+    padding: 0 20px;
+  }
+}
+
+.tabs-section__title {
+  margin: 0 0 35px 0;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: uppercase;
+
+  @include media-tablet {
+    order: 1;
+    margin-bottom: 0;
+  }
+
+  @include media-mobile {
+    font-size: 16px;
+    line-height: 20px;
+  }
+ }
+
+.tabs-section__text {
+  margin-bottom: 30px;
+
+  @include media-tablet {
+    order: 3;
+    margin-top: 30px;
+    margin-bottom: 0;
+  }
+
+  @include media-mobile {
+    margin-top: 20px;
+  }
+}
+
+.tabs-section__text p {
+  margin: 0 0 15px 0;
+  font-family: "Helvetica Neue Cyr";
+  font-size: 14px;
+  line-height: 14px;
+
+  :nth-last-child(1) {
+    margin-bottom: 0;
+  }
+}
+
+.tabs-section__link {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 13px 87px 14px 87px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  color: $blue;
+  text-decoration: none;
+  border: 1px solid $blue;
+  background-color: #f6f6f6;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: #ffffff;
+    background-color: $blue;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  @include media-tablet {
+    padding: 9px 43px 10px 43px;
+    order: 2;
+  }
+
+  @include media-mobile {
+    padding: 6px 30px 7px 30px;
+  }
+}
+
+.tabs-section__image {
+  width: 475px;
+  height: 488px;
+  margin: 0;
+
+  @include media-tablet {
+    position: relative;
+    overflow: hidden;
+    order: 1;
+    width: 688px;
+    height: 460px;
+    margin: 0 auto;
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  @include media-mobile {
+    width: 100vw;
+    max-width: 688px;
+    height: 50vw;
+    max-height: 334px;
+    margin: 0 auto;
+
+    img {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.tabs-section--neurology,
+.tabs-section--massage,
+.tabs-section--rheumatology {
+  display: none;
+}
+
+.tabs-section--active {
+  display: flex;
+}
+
+@include media-custom-min(768px) {
+  #neurology-button:checked ~ .tabs-section--neurology,
+  #massage-button:checked ~ .tabs-section--massage,
+  #rheumatology-button:checked ~ .tabs-section--rheumatology {
+    display: flex;
+  }
+
+  #neurology-button:checked ~ .dirrections::after,
+  #massage-button:checked ~ .dirrections::after,
+  #rheumatology-button:checked ~ .dirrections::after {
+    content: "";
+    position: absolute;
+    bottom: -40px;
+    border: 20px solid transparent;
+    border-top: 45px solid #ffffff;
+    border-bottom: none;
+  }
+  #neurology-button:checked ~ .dirrections::after {
+    left: calc(50% - 320px);
+    transform: translate(-50%);
+
+    @include media-tablet {
+      left: calc(50% - 243px);
+    }
+  }
+
+  #massage-button:checked ~ .dirrections::after {
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  #rheumatology-button:checked ~ .dirrections::after {
+    right: calc(50% - 372px);
+    transform: translate(-50%);
+
+    @include media-tablet {
+      right: calc(50% - 272px);
+    }
+  }
+}

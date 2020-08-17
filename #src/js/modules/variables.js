@@ -1,0 +1,16 @@
+var mobileWidth = 767;
+var currentWidth;
+var $menuButton = $('.page-header__menu-button');
+var $pageHeader = $('.page-header');
+var $pageHeaderLogo = $('.page-header__logo');
+var $pageHeaderMenuLinks = $('.page-header__menu-links');
+var $banner = $('.banner');
+var screenWidth = window.innerWidth;
+var $buttonShowNeurology = $('.dirrections__show-button--neurology');
+var $buttonShowMassage = $('.dirrections__show-button--massage');
+var $buttonShowRheumatology = $('.dirrections__show-button--rheumatology');
+var $NeurologySection = $('.tabs-section--neurology');
+var $MassageSection = $('.tabs-section--massage');
+var $RheumatologySection = $('.tabs-section--rheumatology');
+var $slickPrev = $('slick-prev');
+var $slickNext = $('slick-next');
